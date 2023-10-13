@@ -1,0 +1,27 @@
+<form #formulario="ngForm" (submit)="onSubmit(formulario.value)">
+    <div>
+        <label>Título</label>
+        <input type="text" name="title" ngModel>
+    </div>
+    <div>
+        <label>Descripción</label>
+        <input type="text" name="description" ngModel>
+    </div>
+    <div>
+        <label>Prioridad</label>
+        <select name="priority" ngModel>
+            <option value="0">Leve</option>
+            <option value="1">Media</option>
+            <option value="2">Urgente</option>
+        </select>
+    </div>
+    <input type="submit" value="Enviar">
+</form>
+
+<div>
+    <ul>
+        <li *ngFor="let task of tasks(); let index = index" (click)="onRemove(index)">
+            {{ task.title }} - {{ task.description }} Prioridad: {{task.priority}}
+        </li>
+    </ul>
+</div>
