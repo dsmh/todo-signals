@@ -18,6 +18,7 @@ export class TodoListComponent {
       localStorage.setItem('tasks', JSON.stringify(this.tasks()));
     })
   }
+  
 
   onSubmit(formValue: Task) {
     this.tasks.mutate(( tasks )=> {
